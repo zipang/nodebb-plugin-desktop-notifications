@@ -19,7 +19,7 @@
 					alert_id: 'desktop_notifications',
 					title: '[[plugins:desktop_notifications.title]]',
 					message: '[[plugins:desktop_notifications.message, ' + config.siteTitle + ']]',
-					type: 'info',
+					type: 'success',
 					timeout: 0,
 					clickfn: function () {
 						Notify.requestPermission(hideAlertBar, hideAlertBar);
