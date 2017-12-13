@@ -1,6 +1,0 @@
-{
-    "desktop_notifications.title": "Notifications",
-    "desktop_notifications.configuration": "Configurer les alertes système",
-    "desktop_notifications.message": "<strong>%1</strong> a besoin de votre permission pour activer les notifications système. Cliquez ici pour les activer.",
-    "desktop_notifications.ignored": "Les notifications système ont été désactivées. Vous pouvez les réactiver via les options de votre profil utilisateur."
-}
