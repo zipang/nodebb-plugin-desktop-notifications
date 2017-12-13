@@ -8,7 +8,7 @@
 			return;
 		}
 
-		
+
 		if (localStorage.getItem('plugins:desktop_notifications.ignore') !== 'ignored') {
 			require(['notify'], function(Notify) {
 				if (!Notify.isSupported) {
@@ -60,7 +60,7 @@
 						return;
 					}
 
-					translator.translate('<h4>Desktop Notifications</h4><div class="well"><button class="btn btn-default">Configure Desktop Notifications</button></div>', function(translated) {
+					translator.translate('<h4>[[plugins:desktop_notifications.title]]</h4><div class="well"><button class="btn btn-default">[[plugins:desktop_notifications.configuration]]</button></div>', function(translated) {
 						var well = $(translated);
 						well.find('button').on('click', function() {
 							localStorage.setItem('plugins:desktop_notifications.ignore', '');
@@ -74,7 +74,7 @@
 				});
 			}
 		});
-		
+
 		socket.on('event:plugin:desktop_notifications', function(data) {
 			if (!data) {
 				return;
@@ -90,7 +90,7 @@
 						icon: logo,
 						timeout: 5,
 						notifyClick: function() {
-							socket.emit('notifications.get', {nids: [data.nid]}, function(err, notifs) { 
+							socket.emit('notifications.get', {nids: [data.nid]}, function(err, notifs) {
 								if (notifs.length) {
 									ajaxify.go(notifs[0].path.substring(1));
 								}
@@ -100,7 +100,7 @@
 					});
 					notification.show();
 
-					
+
 					if (data.tid) {
 						$(window).on('action:ajaxify.start', removeNotif);
 						setTimeout(function() {
